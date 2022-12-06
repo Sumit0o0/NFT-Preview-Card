@@ -1,0 +1,232 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  } 
+
+  :root{
+    /* PRIMARY COLORS */
+    --clr-primary: hsl(215, 51%, 70%);
+    --clr-secondary: hsl(178, 100%, 50%);
+    /* NETURALS */
+    --darkblue-mbg: hsl(217, 54%, 11%);
+    --darkblue-cbg: hsl(216, 50%, 16%);
+    --darkblue-line: hsl(215, 32%, 27%);
+    --clr-white: hsl(0, 0%, 100%);
+
+
+    /* FONTS */
+    --ff-primary: 'Red Hat Display', sans-serif;
+    --ff-secondary: 'Inter', sans-serif;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-bold: 700;
+  }
+
+  body{
+    background-color: var(--darkblue-mbg);
+    color: var(--clr-primary);
+    margin: 1rem;
+  }
+
+  main{
+    background-color: var(--darkblue-cbg);
+    font-family: var(--ff-primary);
+    font-size: 1.12rem;
+    font-weight: var(--fw-regular);
+    padding: 1.2rem;
+    /* CARD WIDTH & HEIGHT */
+    width: fit-content;
+    height: fit-content;
+    /* CARD POSITIONG */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+
+
+  #first-art, #second-art, .attribution{
+    width: 20.625rem;
+  }
+
+  main, .equil-img img{
+    border-radius: 1rem;
+  }
+
+  #first-art .equil-img{
+    width: 330;
+    height: 330;
+    cursor: pointer;
+  }
+
+  #first-art .equil-hover-img{
+    position: absolute;
+    width: 20.625rem;
+    height: 20.625rem;
+    background-color: hsla(178, 100%, 50%, 0.326);
+    border-radius: 0.625rem;
+    display: none;
+  }
+
+  #first-art .equil-hover-img img{
+    margin: auto;
+    margin-top: 8.75rem;
+  }
+
+ #first-art:hover .equil-hover-img{
+    display: block;
+    cursor: pointer;
+  }
+
+
+  #first-art{
+    margin-bottom: 1.5rem;
+  }
+
+
+  #second-art h1 a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--clr-white);
+  }
+
+  #second-art h1:hover a{
+    color: var(--clr-secondary);
+  }
+
+  #second-art h1 , p{
+    margin-bottom: 0.8rem;
+  }
+
+  #second-art .info-text, .creator-info{
+    display: flex;
+    gap: 0.7rem;
+    width: 100%;
+  }
+
+  #second-art .textinfo-section{
+    display: flex;
+    border-bottom: 1px solid var(--darkblue-line);
+  }
+
+  #second-art .textinfo-section p:first-child{
+    font-weight: var(--fw-bold);
+    color: var(--clr-secondary);
+  }
+
+  #second-art .textinfo-section img{
+    width: 1rem;
+    height: 1rem;
+    margin: auto 0;
+  }
+
+  #second-art .textinfo-section .info-text:last-child{
+    justify-content: right;
+  }
+
+  #second-art .creatorinfo-section{
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+  }
+
+  #second-art .creatorinfo-section p{
+    margin: auto 0;
+  }
+
+  #second-art .creatorinfo-section p a{
+    text-decoration: none;
+    color: var(--clr-white);
+  }
+
+  #second-art .creatorinfo-section p a:hover{
+    color: var(--clr-secondary);
+  }
+
+  #second-art .creatorinfo-section img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 2px white solid;
+    border-radius: 50%;
+  }
+
+
+  @media only screen and (max-width: 410px){
+
+    body{
+        margin: 150%;
+    }
+
+    main{
+        font-size: 90%;
+      }
+
+    #first-art, #second-art{
+        width: 18.625rem;
+      }
+
+    #first-art .equil-hover-img{
+        width: 18.625rem;
+        height: 18.625rem;
+      }
+
+      #first-art .equil-hover-img img{
+        margin-top: 7.75rem;
+      }
+
+      
+  }
+
+
+
